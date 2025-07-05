@@ -1,0 +1,16 @@
+
+
+func searchInsert(nums []int, target int) int {
+    var result int
+    for index, value := range nums {
+        if value == target {
+            result = index
+            break
+        }else if value > target {
+            return index
+        }else if value < target && index == len(nums)-1 {
+            return index+1
+        }
+    }
+    return result
+}
